@@ -5,7 +5,7 @@ import axios from 'axios';
 export const getControls = () => {
     let params = { callTime: new Date() };
 
-    const url = 'https://api.inquickerstaging.com/v3/winter.inquickerstaging.com/services';
+    const url = 'http://api.inquickerstaging.com/v3/winter.inquickerstaging.com/services';
 
     const request = getAxios(url, { params: { params } });
     return {
@@ -17,7 +17,7 @@ export const getControls = () => {
 export const getResults = () => {
     let params = { callTime: new Date() };
 
-    const url = 'https://api.inquickerstaging.com/v3/winter.inquickerstaging.com/providers?include=locations%2Cschedules.location&page%5Bnumber%5D=1&page%5Bsize%5D=10';
+    const url = 'http://api.inquickerstaging.com/v3/winter.inquickerstaging.com/providers?include=locations%2Cschedules.location&page%5Bnumber%5D=1&page%5Bsize%5D=10';
 
     const request = getAxios(url, { params: { params } });
     return {

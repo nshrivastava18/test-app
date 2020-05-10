@@ -1,5 +1,4 @@
 import update from 'immutability-helper';
-import _ from 'lodash';
 
 const Filter = (state = [], action) => {
     var parsedData;

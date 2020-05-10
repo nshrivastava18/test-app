@@ -31,7 +31,6 @@ class App extends Component {
 
   render() {
     const filteredResult = this.getFilteredResult();
-    debugger
     return (
       <div className="App">
         <Controls controlsData={this.props.controlsData} onClickItem={this.onClickItem} />
