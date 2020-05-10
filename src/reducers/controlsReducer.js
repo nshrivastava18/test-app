@@ -6,7 +6,7 @@ const Controls = (state = [], action) => {
 
     switch (action.type) {
         case 'GET_CONTROLS':
-            parsedData = action.payload.data ? action.payload.data : {};
+            parsedData = action.payload?.data;
             return update(state, { $set: parsedData });
         case 'SET_SELECTED':
             const currItem = action.payload?.selectedItem;

@@ -6,7 +6,7 @@ const Results = (state = [], action) => {
 
     switch (action.type) {
         case 'GET_RESULTS':
-            parsedData = action.payload.data ? action.payload.data : {};
+            parsedData = action.payload?.data;
             return update(state, { $set: parsedData });
         default: return state;
     }
