@@ -8,7 +8,8 @@ import allReducers from './reducers';
 
 const persistedState = {
     controlsData: {},
-    resultsData: {}
+    resultsData: {},
+    filterData: { selectedItem: '', controlName: '' }
 }
 
 const logger = createLogger({

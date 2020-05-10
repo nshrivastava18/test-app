@@ -6,8 +6,8 @@ import Profile from './profile';
 class Results extends Component {
 
     renderItems(items) {
-        if (_.isEmpty(items) || _.isEmpty(items.data) || items.data.length <= 0) { return '' }
-        return (items.data).map((item => {
+        if (_.isEmpty(items) || _.isEmpty(items) || items.length <= 0) { return '' }
+        return items.map((item => {
             return (
                 <li key={item.id} className="results-items">
                     <Profile profileData={item} />

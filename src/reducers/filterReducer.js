@@ -1,15 +1,15 @@
 import update from 'immutability-helper';
 import _ from 'lodash';
 
-const Results = (state = [], action) => {
+const Filter = (state = [], action) => {
     var parsedData;
 
     switch (action.type) {
-        case 'GET_RESULTS':
-            parsedData = action.payload.data ? action.payload.data : {};
+        case 'SET_SELECTED':
+            parsedData = action.payload ? action.payload : { selectedItem: '', controlName: '' };
             return update(state, { $set: parsedData });
         default: return state;
     }
 }
 
-export default Results;
+export default Filter;

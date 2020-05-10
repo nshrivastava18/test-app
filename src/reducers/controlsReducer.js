@@ -9,7 +9,7 @@ const Controls = (state = [], action) => {
             parsedData = action.payload.data ? action.payload.data : {};
             return update(state, { $set: parsedData });
         case 'SET_SELECTED':
-            const currItem = action.payload ? action.payload : '';
+            const currItem = action.payload?.selectedItem;
             let currStateData = _.cloneDeep(state.data);
             //Remove previous selection
             const prevSelIndex = _.findIndex(currStateData, { 'Selected': true });

@@ -3,8 +3,8 @@ import _ from 'lodash';
 import '../App.css';
 
 class Control extends Component {
-    onSelectItem(controlId, e) {
-        this.props.onClickItem(controlId);
+    onSelectItem(controlId, controlName, e) {
+        this.props.onClickItem(controlId, controlName);
     }
 
     renderItems(items) {
@@ -13,7 +13,7 @@ class Control extends Component {
         return (items.data).map((item => {
             const controlName = item?.attributes?.name;
             return (
-                <li key={item.id} className={"controls-items" + (item.Selected ? " active" : "")} onClick={_this.onSelectItem.bind(this, item.id)}>
+                <li key={item.id} className={"controls-items" + (item.Selected ? " active" : "")} onClick={_this.onSelectItem.bind(this, item.id, controlName)}>
                     {controlName}
                 </li>
             );

@@ -7,7 +7,7 @@ export const getControls = () => {
 
     const url = 'https://api.inquickerstaging.com/v3/winter.inquickerstaging.com/services';
 
-    const request = getAxios(url, { params: {params} });
+    const request = getAxios(url, { params: { params } });
     return {
         type: 'GET_CONTROLS',
         payload: request
@@ -19,17 +19,17 @@ export const getResults = () => {
 
     const url = 'https://api.inquickerstaging.com/v3/winter.inquickerstaging.com/providers?include=locations%2Cschedules.location&page%5Bnumber%5D=1&page%5Bsize%5D=10';
 
-    const request = getAxios(url, { params: {params} });
+    const request = getAxios(url, { params: { params } });
     return {
         type: 'GET_RESULTS',
         payload: request
     }
 };
 
-export const setSelectedItem = (selectedItem) => {
+export const setSelectedItem = (selectedItem, controlName) => {
     return {
         type: 'SET_SELECTED',
-        payload: selectedItem,
+        payload: { selectedItem, controlName }
     }
 };
 

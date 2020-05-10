@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import './App.css';
 import Controls from './component/control'
 import Results from './component/results'
+import _ from 'lodash';
 
 class App extends Component {
   constructor() {
@@ -12,16 +13,30 @@ class App extends Component {
     this.onClickItem = this.onClickItem.bind(this);
   }
 
-  onClickItem(selectedItem, e) {
-    this.props.setSelectedItem(selectedItem);
+  onClickItem(selectedItem, controlName, e) {
+    this.props.setSelectedItem(selectedItem, controlName);
   }
 
+  getFilteredResult() {
+    const resultsData = this.props.resultsData;
+    const selControlName = this.props.filterData?.controlName;
+    if (_.isEmpty(resultsData)) return [];
+
+    return  _.filter(resultsData.data, function (data) {
+      const listItems = data?.attributes?.subspecialties;
+      return listItems.join('').toLowerCase().indexOf(selControlName.toLowerCase()) > -1;
+    });
+  }
+  
+
   render() {
+    const filteredResult = this.getFilteredResult();
+    debugger
     return (
       <div className="App">
         <Controls controlsData={this.props.controlsData} onClickItem={this.onClickItem} />
         <hr className="separator"></hr>
-        <Results resultsData={this.props.resultsData} />
+        <Results resultsData={filteredResult} />
       </div>
     );
   }
@@ -29,7 +44,8 @@ class App extends Component {
 
 const mapStateToProps = (state) => ({
   controlsData: state.controlsData,
-  resultsData: state.resultsData
+  resultsData: state.resultsData,
+  filterData: state.filterData
 });
 
 function mapDispatchToProps(dispatch) {
