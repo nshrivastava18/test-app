@@ -1,0 +1,59 @@
+.App {
+  text-align: center;
+}
+
+.container {
+  margin-right: 40px;
+  margin-left: 0px;
+}
+
+.controls-items {
+    line-height: 40px;
+    background-color: white;
+    list-style: none;
+    margin-bottom: 5px;
+    cursor:pointer;
+    border-radius: 12px;
+}
+
+.controls-items:hover {
+  line-height: 40px;
+  background-color: #d2bdbd;
+  list-style: none;
+  margin-bottom: 5px;
+  cursor:pointer;
+  border-radius: 12px;
+}
+
+.separator {
+  height: 5px;
+  background-color: #678e8e;
+}
+
+.results-items {
+  line-height: 30px;
+  background-color: white;
+  list-style: none;
+  margin-bottom: 5px;
+  border-radius: 12px;
+}
+
+.active, .active:hover {
+  background-color: cadetblue;
+}
+
+.profile-image {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+}
+
+.profile-name {
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.profile-subspcl {
+  font-weight: 400;
+  font-size: 15px;
+}
